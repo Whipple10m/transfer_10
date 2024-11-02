@@ -1,0 +1,7 @@
+#!/usr/bin/tcsh
+set noglob
+foreach file ( `/bin/find /draco/quicklook -name "*.gz" -print` )
+ cd $file:h
+ gunzip $file:t
+ bzip2 $file:t:r
+end
